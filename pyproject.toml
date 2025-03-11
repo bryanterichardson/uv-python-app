@@ -1,0 +1,40 @@
+[project]
+dependencies = [
+    "pendulum",
+    "polars",
+    "pydantic",
+]
+name = "template"
+requires-python = ">=3.11"
+version = "0.0.1"
+
+[tool.pytest.ini_options]
+pythonpath = "src/"
+testpaths = [
+    "tests",
+]
+
+[tool.uv]
+dev-dependencies = [
+    "ipython",
+    "pytest-mock>=3.6,<4",
+    "pytest>7",
+]
+#extra-index-url = [
+#    "https://username@my.internal.registry/simple",
+#]
+#keyring-provider = "subprocess"
+
+[tool.ruff]
+line-length = 88
+respect-gitignore = true
+src = [
+    "src",
+    "tests",
+]
+
+format.indent-style = "space"
+format.quote-style = "double"
+
+# Order imports
+lint.extend-select = ["I"]
